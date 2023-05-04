@@ -12,12 +12,13 @@ const ChefCard = ({ chef }) => {
                     <Card.Img className='rounded-circle' style={{ height: "100px", width: "100px" }} src={chef_pic} />
                     </div>
                 </div>
-                <Card.Title className='fw-bold'>{chef_name}</Card.Title>
+                <Card.Title className='fs-2 fw-bold'>{chef_name}</Card.Title>
                 <Card.Text>
-                    <h6>Year of experiences: {years_of_experience}</h6>
-                    <h6>Number of Recipes: {num_recipes}</h6>
+                    <h6 className='text-secondary'>Year of experiences: {years_of_experience}</h6>
+                    <h6 className='text-secondary'>Number of Recipes: {num_recipes}</h6>
                 </Card.Text>
-                <Button className='fw-bold mb-4' variant="warning">View Recipes</Button>
+
+                <Button className='fw-semibold mb-4 text-secondary' variant="warning">View Recipes</Button>
             </Card.Body>
         </Card>
     );

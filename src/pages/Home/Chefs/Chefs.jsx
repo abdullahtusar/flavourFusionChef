@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import './Chefs.css'
+import AboutUs from '../../Shared/AboutUs/AboutUs';
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
@@ -24,22 +25,7 @@ const Chefs = () => {
                     ></ChefCard>)
                 }
             </Container>
-
-            {/* <Container>
-                <Row className="g-4 mb-4">
-                    <Col className='d-flex gap-4'>
-                        {
-                            chefs.map(chef => <ChefCard
-                                key={chef.id}
-                                chef={chef}
-                            ></ChefCard>)
-                        }
-                    </Col>
-                </Row>
-            </Container>
-            <div className='d-flex gap-4 my-5'>
-
-            </div> */}
+            <AboutUs></AboutUs>
         </Container>
     );
 };
