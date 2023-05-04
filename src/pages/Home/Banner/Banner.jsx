@@ -16,7 +16,7 @@ const Banner = () => {
                 <Carousel.Caption>
                     <div className='bg-secondary rounded p-3 bg-opacity-50'>
                         <div>
-                            <h3>Eat Your Way to Better Health</h3>
+                            <h3 className='fw-bold'>Eat Your Way to Better Health</h3>
                             <p>Discover the Power of Nutrient-Dense Foods</p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const Banner = () => {
                 <Carousel.Caption>
                     <div className='bg-secondary rounded p-3 bg-opacity-50'>
                         <div>
-                            <h3>Eat Your Way to Better Health</h3>
+                            <h3 className='fw-bold'>Eat Your Way to Better Health</h3>
                             <p>Discover the Power of Nutrient-Dense Foods</p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const Banner = () => {
                 <Carousel.Caption>
                     <div className='bg-secondary rounded p-3 bg-opacity-50'>
                         <div>
-                            <h3>Eat Your Way to Better Health</h3>
+                            <h3 className='fw-bold'>Eat Your Way to Better Health</h3>
                             <p>Discover the Power of Nutrient-Dense Foods</p>
                         </div>
                     </div>

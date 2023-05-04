@@ -13,7 +13,6 @@ const Chefs = () => {
             .catch(error => console.log(error))
     }, [])
     console.log(chefs)
-    const { id, chef_name, chef_pic, num_recipes, years_of_experiences } = chefs;
     return (
         <Container className='mt-5'>
             <h1 className='text-center fw-bold'>Our Master Chefs</h1>
