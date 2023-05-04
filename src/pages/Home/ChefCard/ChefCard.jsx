@@ -10,7 +10,7 @@ const ChefCard = ({ chef }) => {
         <Card className='my-4 text-center shadow'>
             <Card.Body>
                 <div className='w-100 mb-2'>
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center py-4'>
                         <Card.Img className='rounded-circle shadow-sm' style={{ height: "100px", width: "100px" }} src={chef_pic} />
                     </div>
                 </div>
