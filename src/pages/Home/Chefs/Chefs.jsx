@@ -15,7 +15,7 @@ const Chefs = () => {
     console.log(chefs)
     return (
         <Container className='mt-5'>
-            <h1 className='text-center fw-bold'>Our Master Chefs</h1>
+            <h1 className='text-center fw-bold text-secondary'>Our Master Chefs</h1>
             <Container className='cards mt-3 mb-5'>
                 {
                     chefs.map(chef => <ChefCard

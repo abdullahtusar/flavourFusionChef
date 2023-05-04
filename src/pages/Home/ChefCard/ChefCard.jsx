@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaRegThumbsUp } from "react-icons/fa";
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     const { id, chef_name, chef_pic, num_recipes, years_of_experience } = chef;
@@ -25,7 +26,9 @@ const ChefCard = ({ chef }) => {
                     </div>
                 </button>
                 </div>
-                <Button className='fw-semibold mb-4 text-secondary px-4 py-2 shadow' variant="warning">View Recipes</Button>
+                <Link to={`/chef/${chef.id}`}>
+                    <Button className='fw-semibold mb-4 text-secondary px-4 py-2 shadow' variant="warning">View Recipes</Button>
+                </Link>
             </Card.Body>
         </Card>
     );

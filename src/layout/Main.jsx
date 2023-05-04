@@ -9,11 +9,9 @@ const Main = () => {
     return (
         <div className=''>
             <Header></Header>
-            <div>
-                <Banner></Banner>
-                <Chefs></Chefs>
-                <Outlet></Outlet>
-            </div>
+            <Banner></Banner>
+            <Chefs></Chefs>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
