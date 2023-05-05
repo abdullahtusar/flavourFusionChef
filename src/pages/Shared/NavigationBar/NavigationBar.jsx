@@ -1,7 +1,17 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 const NavigationBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut =()=>{
+        logOut()
+        .then(result =>{})
+        .catch(error =>{
+            console.log(error);
+        })
+    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light" className='py-3'>
@@ -19,9 +29,20 @@ const NavigationBar = () => {
                             <Link to="/blog" className='text-decoration-none me-4 text-warning fw-semibold'>
                                 Blog
                             </Link>
-                            <Link to="/login" className='text-decoration-none me-4 text-warning fw-semibold'>
-                                Login
-                            </Link>
+                            <Link to="/registration" className='text-decoration-none me-4 text-warning fw-semibold'>
+                                Register
+                            </Link>  
+                            {
+                                user && <Link className='pe-2 text-warning'>
+                                    <FaUserCircle className='fs-3' />
+                                </Link>
+                            }
+                            {
+                                    user ? <Link onClick={handleLogOut} className='text-decoration-none me-4 text-warning fw-semibold'>Logout</Link> :
+                                    <Link to="/login" className='text-decoration-none me-4 text-warning fw-semibold'>
+                                    Login
+                                </Link>
+                                }
                             {/* {
                                 user && <Link href="#deets">
                                     <FaUserCircle className='fs-3' />

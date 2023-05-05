@@ -4,6 +4,11 @@
     height: 100vh;
 }
 
+@media only screen and (max-width: 992px) {
+    .background{
+        height: 120vh;
+    }
+}
 
 
 @media only screen and (min-width: 1080px) {

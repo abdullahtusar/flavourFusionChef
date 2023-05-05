@@ -6,8 +6,8 @@ import { Button } from 'bootstrap';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
-        <div className='bg-secondary p-3'>
-                        <Container >
+        <div className='bg-secondary p-3 pt-5'>
+                        <Container className='pt-3'>
                             <Container className='foot mb-3 bg-secondary border-0'>
                             <div className=''> 
                                 <h2><Link className='text-decoration-none text-warning fw-bold' to="/">Flavor Fusion Chef </Link></h2>
@@ -28,7 +28,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </Container>
-                        <div className='px-1 text-light'>
+                        <div className='text-light'>
                             <hr />
                         </div>
                         <div className='d-flex gap-3 justify-content-between'>

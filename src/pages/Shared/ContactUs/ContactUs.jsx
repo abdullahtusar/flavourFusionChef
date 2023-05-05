@@ -11,7 +11,7 @@ const ContactUs = () => {
                         <Image style={{ height: "auto", width: "100%" }} className='rounded shadow' src='https://i.ibb.co/kXT2hyQ/2761902.jpg' />
                     </Col>
                     <Col className='my-auto'> 
-                        <Form className='px-5'>
+                        <Form className='px-5 pt-5'>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Your Name</Form.Label>
                                 <Form.Control type="email" placeholder="Enter name" />
