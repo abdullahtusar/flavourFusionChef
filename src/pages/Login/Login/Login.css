@@ -1,0 +1,13 @@
+.background{
+    background-image: url("https://i.ibb.co/jwbzPJJ/chef-holding-pan-with-fire-inside.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+@media only screen and (min-width: 1080px) {
+    .width-set{
+        width: 25%;
+    }
+}

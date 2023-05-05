@@ -6,7 +6,7 @@ const NavigationBar = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light" className='py-3'>
                 <Container>
-                    <Navbar.Brand href="#home" className='fw-bold text-warning'>Flavor Fusion Chef</Navbar.Brand>
+                    <Navbar.Brand className='fw-bold'><Link className='text-decoration-none text-warning' to="/">Flavor Fusion Chef </Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className='me-auto'>

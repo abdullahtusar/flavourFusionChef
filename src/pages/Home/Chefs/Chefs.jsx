@@ -7,12 +7,11 @@ import AboutUs from '../../Shared/AboutUs/AboutUs';
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://b7a10-chef-recipe-hunter-server-side-abdullahtusa-abdullahtusar.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.log(error))
     }, [])
-    console.log(chefs)
     return (
         <Container className='mt-5'>
             <h1 className='text-center fw-bold text-secondary'>Our Master Chefs</h1>

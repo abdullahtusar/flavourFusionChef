@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Container } from 'react-bootstrap';
-import { Form, Link } from 'react-router-dom';
+import { Button, Container, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
     return (
-        <div>
-            <Container className='w-25 mx-auto bg-light p-5 rounded'>
-            <h2 className='text-center fw-bold text-secondary mb-5'>Register your account</h2>
+        <div className='background d-flex align-items-center'>
+            <Container className='width-set mx-auto bg-light py-3 px-5 rounded bg-opacity-75'>
+            <h2 className='text-center fw-bold text-secondary mb-3'>Register your account</h2>
             <hr className='text-secondary' />
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -28,20 +28,13 @@ const Registration = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check 
-                        onClick={handleCheck}
-                        type="checkbox" 
-                        name="accept" 
-                        label={<>Accept <Link to="/terms">terms and conditions</Link></>} />
-                </Form.Group>
-                <Button className='w-100 fw-bold' disabled={!accepted} variant="secondary" type="submit">
+                <Button className='w-100 fw-bold mt-3  text-secondary btn1' type="submit">
                     Register
                 </Button>
                 <div className='mt-3 text-center'>
                     <Form.Text className='text-secondary fw-bold'>
                         Already Have An Account ?
-                        <Link className='text-decoration-none text-warning' to="/login"> Login</Link>
+                        <Link className='text-danger' to="/login"> Please Login</Link>
                     </Form.Text>
                 </div>
                 <Form.Text className='text-success'>

@@ -2,10 +2,9 @@ import React from 'react';
 import { FaRegThumbsUp } from "react-icons/fa";
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import './ChefCard.css'
 const ChefCard = ({ chef }) => {
     const { id, chef_name, chef_pic, num_recipes, years_of_experience } = chef;
-    console.log(chef_name);
     return (
         <Card className='my-4 text-center shadow'>
             <Card.Body>
@@ -15,10 +14,8 @@ const ChefCard = ({ chef }) => {
                     </div>
                 </div>
                 <Card.Title className='fs-2 fw-bold'>{chef_name}</Card.Title>
-                <Card.Text>
-                    <h6 className='text-secondary'>Year of experiences: {years_of_experience}</h6>
-                    <h6 className='text-secondary'>Number of Recipes: {num_recipes}</h6>
-                </Card.Text>
+                <Card.Text className='text-secondary'>Year of experiences: {years_of_experience}</Card.Text>
+                <Card.Text className='text-secondary'>Number of Recipes: {num_recipes}</Card.Text>
                 <div>
                 <button className='border-0 bg-white'>
                     <div className='mb-3 text-secondary'>
@@ -27,7 +24,7 @@ const ChefCard = ({ chef }) => {
                 </button>
                 </div>
                 <Link to={`/chef/${chef.id}`}>
-                    <Button className='fw-semibold mb-4 text-secondary px-4 py-2 shadow' variant="warning">View Recipes</Button>
+                    <Button className='btn1 fw-semibold mb-4 text-secondary px-4 py-2 shadow'>View Recipes</Button>
                 </Link>
             </Card.Body>
         </Card>

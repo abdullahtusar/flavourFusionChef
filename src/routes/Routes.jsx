@@ -10,11 +10,33 @@ import Banner from '../pages/Home/Banner/Banner';
 import Chefs from '../pages/Home/Chefs/Chefs';
 import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
 import RecipesLayout from '../layout/RecipesLayout';
+import Blog from '../pages/Home/Blog/Blog';
 
 const router = createBrowserRouter([
-    
     {
         path: '/',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+            {
+                path: '/',
+                element: <Navigate to="/home"></Navigate>
+            },
+            {
+                path:'blog',
+                element: <Blog></Blog>
+            },
+            {
+                path:'login',
+                element: <Login></Login>
+            },
+            {
+                path:'Registration',
+                element: <Registration></Registration>
+            }
+        ]
+    },
+    {
+        path: 'home',
         element: <Main></Main>,
     },
     {
@@ -24,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: '/chef/:id',
                 element: <ChefDetails></ChefDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+                loader: ({params}) => fetch(`https://b7a10-chef-recipe-hunter-server-side-abdullahtusa-abdullahtusar.vercel.app/chef/${params.id}`)
             }
         ]
     }
