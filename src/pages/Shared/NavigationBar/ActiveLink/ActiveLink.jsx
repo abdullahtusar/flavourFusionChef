@@ -1,12 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-bootstrap';
 import './ActiveLink.css'
+import { NavLink } from 'react-router-dom';
 const ActiveLink = ({to, children}) => {
     return (
         <NavLink 
          to={to}  
          className={({isActive}) =>
-            isActive ? "active" : ""
+            isActive ? "active text-decoration-none me-4 fw-bold" : 
+            "text-decoration-none me-4 text-warning fw-bold"
         }
         >
             {children}

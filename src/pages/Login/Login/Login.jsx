@@ -3,9 +3,10 @@ import './Login.css'
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, googleSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
@@ -28,6 +29,18 @@ const Login = () => {
                 console.log(error)
             });
 
+    }
+
+    const handleGoogleSignIn = () =>{
+        googleSignIn()
+        .then(result =>{
+            const googleUser = result.googleUser;
+            console.log(googleUser);
+        })
+        .catch(error => {
+            console.log(error)
+        });
+        
     }
     return (
         <div className='background d-flex align-items-center'>
@@ -53,35 +66,9 @@ const Login = () => {
                             <Link className='text-danger' to="/registration"> Please Register</Link>
                         </Form.Text>
                     </div>
-                    <Form.Text className='text-success'>
-
-                    </Form.Text>
-                    <Form.Text className='text-danger'>
-
-                    </Form.Text>
-                </Form>
-            </Container>
-            {/* <Container className='w-25 mx-auto bg-light p-5 rounded'>
-                <h2 className='text-center fw-bold text-secondary mb-5'>Login your account</h2>
-                <hr className='text-secondary' />
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" name="email" placeholder="Enter email" required />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" placeholder="Password" required />
-                    </Form.Group>
-                    <Button className='w-100 fw-bold' variant="secondary" type="submit">
-                        Login
-                    </Button>
-                    <div className='mt-3 text-center'>
-                        <Form.Text className='text-secondary fw-bold'>
-                            Do not Have An Account ?
-                            <Link className='text-decoration-none text-warning' to="/registration"> Register</Link>
-                        </Form.Text>
+                    <div className='d-flex justify-content-center pt-4'>
+                        <Button onClick={handleGoogleSignIn} className='me-4 btn1'><FaGoogle className='fs-3'></FaGoogle></Button>
+                        <Button className='btn1'><FaGithub className='fs-3'></FaGithub></Button>
                     </div>
                     <Form.Text className='text-success'>
 
@@ -90,7 +77,7 @@ const Login = () => {
 
                     </Form.Text>
                 </Form>
-            </Container> */}
+            </Container>
         </div>
     );
 };
