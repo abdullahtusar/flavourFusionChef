@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Container, Row } from 'react-bootstrap';
-import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipe }) => {
     
     const { recipe_name, pic, ingredients, method_of_cooking, rating } = recipe;
+
+    const [clicked, setClicked] = useState(true);
+    const addFavour = () =>{
+        toast('Add to favourite');
+        setClicked(false);
+    }
     return (
         <div>
             <Card className='my-4 shadow'>
@@ -36,16 +43,20 @@ const RecipeCard = ({ recipe }) => {
                     </span>
                 </div>
                 <div>
-                    <Button className='bg-light border-0'>
-                        <FaHeart className='fs-5'></FaHeart>
+                    <Button disabled={!clicked} onClick={addFavour} className='bg-light border-0'> 
+                        {
+                            clicked ? <FaRegHeart className='fs-5 text-danger'></FaRegHeart> : 
+                            <FaHeart className='fs-5 text-danger'></FaHeart>
+                        }
+                        
                     </Button>
-                    
                     {/* <Button className='mb-3 bg-light' variant='outline-warning'>
                         <FaHeart></FaHeart>
                     </Button> */}
                 </div>
                 </Card.Footer>
-            </Card>   
+                <ToastContainer/>
+            </Card> 
         </div>
     );
 };
