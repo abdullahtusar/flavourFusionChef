@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
+import Pdf from 'react-to-pdf';
+
+const ref = React.createRef();
 const Blog = () => {
     return (
         <div className=''>
@@ -29,9 +32,13 @@ const Blog = () => {
                         <p className='text-secondary fw-semibold'><FaArrowRight className='text-warning fs-3'></FaArrowRight> A custom hook in React is a reusable function that encapsulates common logic and state in a single place, which can be shared across multiple components in an application. Custom hooks follow the same rules as React hooks, which means they can use other hooks, but must start with the prefix "use" and follow the React Hook Rules.</p>
                     </Card.Body>
                 </Card>
-                <div className='d-flex justify-content-center'>
-                    <Button className='btn1 p-4 text-secondary fw-bold'>Download PDF</Button>
-                </div>
+                <Pdf targetRef={ref} filename="code-example.pdf">
+                    {({ toPdf }) => ( 
+                        <div className='d-flex justify-content-center'>
+                        <Button onClick={toPdf} className='btn1 p-4 text-secondary fw-bold'>Download PDF</Button>
+                    </div>
+                    )}
+                </Pdf>
             </Container>
         </div>
     );
