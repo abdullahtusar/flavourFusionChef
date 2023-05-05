@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
 
 
 
@@ -22,7 +23,25 @@ const RecipeCard = ({ recipe }) => {
                         {method_of_cooking}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer className="text-muted">{rating}</Card.Footer>
+                <Card.Footer className="text-muted d-flex align-items-center">
+                <div className='flex-grow-1'>
+                    <Rating
+                      placeholderRating={rating}
+                      readonly
+                      emptySymbol={<FaRegStar></FaRegStar>}
+                      placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                      fullSymbol={<FaStar></FaStar>}
+                    ></Rating><span className='d-flex'>
+                        Rating: <span className='ps-2'>  {rating}</span>
+                    </span>
+                </div>
+                <div>
+                    <FaHeart className='fs-5'></FaHeart>
+                    {/* <Button className='mb-3 bg-light' variant='outline-warning'>
+                        <FaHeart></FaHeart>
+                    </Button> */}
+                </div>
+                </Card.Footer>
             </Card>   
         </div>
     );

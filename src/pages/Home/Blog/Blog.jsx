@@ -1,10 +1,9 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
-
 const Blog = () => {
     return (
-        <div className='background'>
+        <div className=''>
             <Container className='py-5'>
                 <Card className='px-3 mb-4'>
                     <Card.Body>

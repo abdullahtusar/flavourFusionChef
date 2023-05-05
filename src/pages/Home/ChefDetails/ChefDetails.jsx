@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
-import Footer from '../../Shared/Footer/Footer';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import { FaRegThumbsUp } from 'react-icons/fa';
 import RecipeCard from '../RecipeCard/RecipeCard';
 
 const ChefDetails = () => {
     const chef = useLoaderData();
-    const { id, chef_name, chef_pic, num_recipes, years_of_experience, description, recipes } = chef;
+    const { id, chef_name, chef_pic, num_recipes, years_of_experience, description, recipes, likes } = chef;
     return (
         <div>
             <Container className=''>
@@ -23,11 +21,12 @@ const ChefDetails = () => {
                         <h1 className='fw-bold'>{chef_name}</h1>
                         <p className='text-secondary'>{description}</p>
                         <div>
-                            <button className='border-0 bg-white'>
-                                <div className='mb-3 text-secondary'>
-                                    <FaRegThumbsUp className='fs-4'></FaRegThumbsUp>
+                            <Button className='mb-3 bg-light' variant='outline-warning'>
+                                <div className='text-secondary d-flex align-items-center'>
+                                    <FaRegThumbsUp className='fs-5'>  </FaRegThumbsUp>
+                                    <span className='ps-1'>{likes}</span>
                                 </div>
-                            </button>
+                            </Button>
                         </div>
                         <p><b>Number of Recipes:</b> {num_recipes}</p>
                         <p><b>Year of Experiences:</b> {years_of_experience}</p>
@@ -37,7 +36,7 @@ const ChefDetails = () => {
             <Container className=''>
                 <h1 className='fw-bold rounded shadow text-center my-4 text-secondary bg-warning p-3'>Recipes</h1>
             </Container>
-            <Container className='cards' style={{height:"auto"}}>
+            <Container className='cards' style={{ height: "auto" }}>
                 {
                     recipes.map(recipe => <RecipeCard
                         key={recipe.recipe_name}
