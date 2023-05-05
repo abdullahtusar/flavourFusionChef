@@ -6,7 +6,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-    const {signIn, googleSignIn} = useContext(AuthContext);
+    const {signIn, googleSignIn, gitSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
@@ -42,6 +42,17 @@ const Login = () => {
         });
         
     }
+    const handleGitSignIn = () =>{
+        gitSignIn()
+        .then(result =>{
+            const gitUser = result.gitUser;
+            console.log(gitUser);
+        })
+        .catch(error => {
+            console.log(error)
+        });
+        
+    }
     return (
         <div className='background d-flex align-items-center'>
             <Container className='width-set mx-auto bg-light p-5 rounded bg-opacity-75'>
@@ -68,7 +79,7 @@ const Login = () => {
                     </div>
                     <div className='d-flex justify-content-center pt-4'>
                         <Button onClick={handleGoogleSignIn} className='me-4 btn1'><FaGoogle className='fs-3'></FaGoogle></Button>
-                        <Button className='btn1'><FaGithub className='fs-3'></FaGithub></Button>
+                        <Button onClick={handleGitSignIn} className='btn1'><FaGithub className='fs-3'></FaGithub></Button>
                     </div>
                     <Form.Text className='text-success'>
 
