@@ -3,6 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+import ActiveLink from './ActiveLink/ActiveLink';
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut =()=>{
@@ -38,7 +39,7 @@ const NavigationBar = () => {
                                 </Link>
                             }
                             {
-                                    user ? <Link onClick={handleLogOut} className='text-decoration-none me-4 text-warning fw-semibold'>Logout</Link> :
+                                    user ? <Link to='/login' onClick={handleLogOut} className='text-decoration-none me-4 text-warning fw-semibold'>Logout</Link> :
                                     <Link to="/login" className='text-decoration-none me-4 text-warning fw-semibold'>
                                     Login
                                 </Link>

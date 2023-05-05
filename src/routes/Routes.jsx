@@ -8,6 +8,7 @@ import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
 import RecipesLayout from '../layout/RecipesLayout';
 import Blog from '../pages/Home/Blog/Blog';
 import ErrorPage from '../pages/Home/ErrorPage/ErrorPage';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/chef/:id',
-                element: <ChefDetails></ChefDetails>,
+                element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`https://b7a10-chef-recipe-hunter-server-side-abdullahtusa-abdullahtusar.vercel.app/chef/${params.id}`)
             }
         ]
