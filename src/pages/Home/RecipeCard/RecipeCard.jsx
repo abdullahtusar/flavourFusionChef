@@ -36,7 +36,10 @@ const RecipeCard = ({ recipe }) => {
                     </span>
                 </div>
                 <div>
-                    <FaHeart className='fs-5'></FaHeart>
+                    <Button className='bg-light border-0'>
+                        <FaHeart className='fs-5'></FaHeart>
+                    </Button>
+                    
                     {/* <Button className='mb-3 bg-light' variant='outline-warning'>
                         <FaHeart></FaHeart>
                     </Button> */}
