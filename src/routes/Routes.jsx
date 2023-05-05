@@ -1,16 +1,13 @@
 import React from 'react';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Main from '../layout/Main';
-import Home from '../pages/Home/Home/Home';
-import ChefCard from '../pages/Home/ChefCard/ChefCard';
 import LoginLayout from '../layout/LoginLayout';
 import Login from '../pages/Login/Login/Login';
 import Registration from '../pages/Login/Registration/Registration';
-import Banner from '../pages/Home/Banner/Banner';
-import Chefs from '../pages/Home/Chefs/Chefs';
 import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
 import RecipesLayout from '../layout/RecipesLayout';
 import Blog from '../pages/Home/Blog/Blog';
+import ErrorPage from '../pages/Home/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path:'Registration',
                 element: <Registration></Registration>
+            },
+            {
+                path:"*",
+                element: <ErrorPage></ErrorPage>
             }
         ]
     },
