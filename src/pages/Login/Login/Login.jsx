@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -10,6 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location);
+    const [error, setError] = useState(null);
 
     const from = location.state?.from?.pathname || '/home';
 
@@ -26,7 +27,8 @@ const Login = () => {
                 navigate(from);
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                setError(error.message);
             });
 
     }
@@ -34,8 +36,7 @@ const Login = () => {
     const handleGoogleSignIn = () =>{
         googleSignIn()
         .then(result =>{
-            const googleUser = result.googleUser;
-            console.log(googleUser);
+            const googleUser = result.user;
         })
         .catch(error => {
             console.log(error)
@@ -45,7 +46,7 @@ const Login = () => {
     const handleGitSignIn = () =>{
         gitSignIn()
         .then(result =>{
-            const gitUser = result.gitUser;
+            const gitUser = result.user;
             console.log(gitUser);
         })
         .catch(error => {
@@ -84,8 +85,8 @@ const Login = () => {
                     <Form.Text className='text-success'>
 
                     </Form.Text>
-                    <Form.Text className='text-danger'>
-
+                    <Form.Text className='text-danger text-center'>
+                        {error}
                     </Form.Text>
                 </Form>
             </Container>
