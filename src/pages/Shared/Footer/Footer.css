@@ -1,0 +1,10 @@
+.foot{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+}
+@media only screen and (max-width: 768px) {
+    .foot{
+        flex-direction: column;
+    }
+}

@@ -3,6 +3,7 @@ import ChefCard from '../ChefCard/ChefCard';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import './Chefs.css'
 import AboutUs from '../../Shared/AboutUs/AboutUs';
+import ContactUs from '../../Shared/ContactUs/ContactUs';
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
@@ -24,6 +25,7 @@ const Chefs = () => {
                 }
             </Container>
             <AboutUs></AboutUs>
+            <ContactUs></ContactUs>
         </Container>
     );
 };
